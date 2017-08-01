@@ -40,6 +40,8 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
     compile 'org.greenrobot:greendao:3.2.2' // add library
+    //第三方沉浸式状态栏
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
 
     testCompile 'junit:junit:4.12'
 }

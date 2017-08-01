@@ -1,17 +1,14 @@
 package com.thisrpg;
 
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import com.thisrpg.db.DaoMaster;
+import com.thisrpg.db.DaoSession;
+import com.thisrpg.db.Players;
+import com.thisrpg.db.PlayersDao;
 
-import org.greenrobot.greendao.AbstractDaoMaster;
-import org.greenrobot.greendao.AbstractDaoSession;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,13 +19,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
-        List<String> dbNameList = new ArrayList<>();
-        dbNameList.add("rpg.db");
+        String dbNameList = "rpg.db";
         SQLdm.loadData(this, dbNameList, new SQLdm.LoadDataCallback() {
             @Override
-            public void loadSuccess() {
-
+            public void loadSuccess(SQLiteDatabase database) {
+                DaoMaster daoMaster = new DaoMaster(database);
+                DaoSession daoSession = daoMaster.newSession();
+                PlayersDao userDao = daoSession.getPlayersDao();
+                List<Players> user = userDao.queryBuilder().where(PlayersDao.Properties.Uid.eq(1)).build().list();
+                LogUtils.e(user.get(0).getName());
             }
 
             @Override
