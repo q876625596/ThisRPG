@@ -3,17 +3,22 @@ package com.thisrpg.db;
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Generated;
+import org.greenrobot.greendao.annotation.Property;
 
 /**
  * Created by Administrator on 2017/7/31 0031.
  */
 
-@Entity
+@Entity(nameInDb = "players",createInDb = false)
 public class Players {
 
+    @Property(nameInDb = "uid")
     private Long uid;
+    @Property(nameInDb = "name")
     private String name;
+    @Property(nameInDb = "gender")
     private int gender;
+    @Property(nameInDb = "create_time")
     private String create_time;
 
 

@@ -3,4 +3,20 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="whiteGray">#BDC0BA</color>
+    <color name="deepGray">#91989F</color>
+    <color name="shion">#8F77B5</color>
+    <color name="water">#81C7D4</color>
+    <color name="sora">#58B2DC</color>
+    <color name="tamago">#F9BF45</color>
+    <color name="tintRed">#F75C2F</color>
+    <color name="sakura">#FEDFE1</color>
+    <color name="momo">#F596AA</color>
+    <color name="tintGreen">#B5CAA0</color>
+    <color name="tintGreen1">#86C166</color>
+    <color name="deepGreen">#1B813E</color>
+    <color name="kikyo">#6A4C9C</color>
+    <color name="deepBlack">#1C1C1C</color>
 </resources>
